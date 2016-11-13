@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  challenge
 //
-//  Created by Júlio César Garavelli on 13/11/16.
+//  Created by Patrícia Gabriele Neri on 13/11/16.
 //  Copyright © 2016 Patrícia Gabriele Neri. All rights reserved.
 //
 
