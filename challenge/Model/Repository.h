@@ -11,6 +11,14 @@
 @interface Repository : NSObject
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *fullName;
+@property (nonatomic, strong) NSString *language;
+@property (nonatomic, strong) NSString *descriptionRepo;
+@property (nonatomic, strong) NSString *fork;
+@property (nonatomic, strong) NSString *forks;
+@property (nonatomic, strong) NSDictionary *owner;
+@property (nonatomic, strong) NSString *ownerLogin;
+@property (nonatomic, strong) NSString *ownerAvatar;
 
 /*!
  * init method for repository

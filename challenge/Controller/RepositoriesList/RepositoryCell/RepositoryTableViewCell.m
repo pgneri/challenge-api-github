@@ -1,14 +1,22 @@
 //
-//  UserTableViewCell.m
+//  RepositoryTableViewCell.m
 //  challenge
 //
 //  Created by Patrícia Gabriele Neri on 13/11/16.
 //  Copyright © 2016 Patrícia Gabriele Neri. All rights reserved.
 //
 
-#import "UserTableViewCell.h"
+#import "RepositoryTableViewCell.h"
 
-@implementation UserTableViewCell
+@interface RepositoryTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+
+@property Repository* repository;
+
+@end
+
+@implementation RepositoryTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -19,6 +27,11 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setupWitRepository:(Repository *)repository {
+    _lblTitle.text = repository.name;
+    self.repository = repository;
 }
 
 @end

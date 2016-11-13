@@ -14,7 +14,16 @@
     self = [super init];
     if (self) {
         _name = dic[@"name"];
+        _fullName = dic[@"full_name"];
+        _language = dic[@"language"];
+        _descriptionRepo = dic[@"description"];
+        _fork = dic[@"fork"];
+        _forks = dic[@"forks"];
+        _owner = dic[@"owner"];
+        _ownerLogin = _owner[@"login"];
+        _ownerAvatar = _owner[@"avatar_url"];
     }
+    NSLog(@"%@",_name);
     return self;
 }
 

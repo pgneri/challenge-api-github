@@ -27,25 +27,13 @@
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         
         NSError *error = nil;
-        
-//        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&error];
-//
-//        if(dic!=nil) {
-//            if (!error) {
-//                NSLog(@"JSON: %@", responseObject);
-//                NSLog(@"Chamada efetuada com sucesso");
-//                success(dic);
-//            } else {
-//                err();
-//            }
-//        } else {
-//            NSLog(@"Error: %@", error);
-//            err();
-//        }
-
-        success(responseObject);
-
-
+        if (!error) {
+            NSLog(@"JSON: %@", responseObject);
+            NSLog(@"Chamada efetuada com sucesso");
+            success(responseObject);
+        } else {
+            err();
+        }
 
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);

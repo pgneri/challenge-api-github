@@ -16,8 +16,8 @@
     if (self) {
         _aRepositories = [[NSMutableArray alloc] init];
         
-        NSDictionary *results = dic[@"data"];
-        for (NSDictionary *dic in results[@"results"]) {
+        NSDictionary *results = dic[@"items"];
+        for (NSDictionary *dic in results) {
             [_aRepositories addObject:[[Repository alloc] initWithDictionary:dic]];
         }
     }

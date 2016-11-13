@@ -1,5 +1,5 @@
 //
-//  UserTableViewCell.h
+//  RepositoryTableViewCell.h
 //  challenge
 //
 //  Created by Patrícia Gabriele Neri on 13/11/16.
@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Repository.h"
 
-@interface UserTableViewCell : UITableViewCell
+@interface RepositoryTableViewCell : UITableViewCell
+
+- (void)setupWitRepository:(Repository *)repository;
 
 @end

@@ -16,9 +16,8 @@
     if (self) {
         _aUsers = [[NSMutableArray alloc] init];
         
-        NSDictionary *results = dic[@"data"];
-        for (NSDictionary *dic in results[@"results"]) {
-        NSLog(@"EEEEE");
+        NSDictionary *results = dic[@"items"];
+        for (NSDictionary *dic in results) {
             [_aUsers addObject:[[User alloc] initWithDictionary:dic]];
         }
     }

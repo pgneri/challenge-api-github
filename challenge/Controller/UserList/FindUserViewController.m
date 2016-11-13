@@ -9,10 +9,12 @@
 #import "FindUserViewController.h"
 #import "ResponseUserList.h"
 #import "AlertView.h"
+#import "UserTableViewCell.h"
 
 @interface FindUserViewController ()
 
 @property (nonatomic, strong) NSMutableArray *dataSource;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -22,6 +24,7 @@
     [super viewDidLoad];
     
     self.dataSource = [[NSMutableArray alloc] init];
+
     [self loadUserFromGitHub];
     // Do any additional setup after loading the view.
 }
@@ -32,7 +35,7 @@
 }
 
 - (void)loadUserFromGitHub {
-    NSString *url = [NSString stringWithFormat:@"https://api.github.com/users/pgneri"];
+    NSString *url = [NSString stringWithFormat:@"https://api.github.com/search/users?q=patricia"];
     
     // buscar lista de usuarios
     [[[WebService alloc] init] getUserWithUrl:url withCompletion:^(NSDictionary *JSONResponse) {
@@ -51,11 +54,48 @@
     NSLog(@"aaaaaaaa");
     NSLog(@"%@",response.aUsers);
     [_dataSource addObjectsFromArray:response.aUsers];
-    
-    //[_tableView reloadData];
+
+    [_tableView reloadData];
 
 }
 
+#pragma mark - UITableView Delegate && DataSource
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [tableView setLayoutMargins:UIEdgeInsetsZero];
+    }
+    
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 65.0f;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _dataSource.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UserTableViewCell *cell = (UserTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    if (cell == nil) {
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"UserTableViewCell" owner:self options:nil];
+        cell = [topLevelObjects objectAtIndex:0];
+    }
+    
+    [cell setupWitUser:[_dataSource objectAtIndex:indexPath.row]];
+    
+    return cell;
+}
 
 /*
 #pragma mark - Navigation

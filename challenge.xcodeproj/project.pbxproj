@@ -196,14 +196,10 @@
 		D2B34C5D1DD83018008F4648 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D2B34C8E1DD83F79008F4648 /* RepositoryCell */,
-				D2B34C8D1DD83F55008F4648 /* UserCell */,
+				D2B34CA31DD8D483008F4648 /* RepositoriesList */,
+				D2B34CA21DD8D479008F4648 /* UserList */,
 				D2B34C6C1DD83452008F4648 /* MainViewController-Swift.h */,
 				D2F18C701DD82B2E00E39E29 /* MainViewController.swift */,
-				D2B34C6D1DD8352F008F4648 /* FindUserViewController.h */,
-				D2B34C6E1DD8352F008F4648 /* FindUserViewController.m */,
-				D2B34C721DD83545008F4648 /* FindRepositoryViewController.h */,
-				D2B34C731DD83545008F4648 /* FindRepositoryViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -247,6 +243,26 @@
 				D2B34C5F1DD832E3008F4648 /* challenge-Bridging-Header.h */,
 			);
 			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		D2B34CA21DD8D479008F4648 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				D2B34C6D1DD8352F008F4648 /* FindUserViewController.h */,
+				D2B34C6E1DD8352F008F4648 /* FindUserViewController.m */,
+				D2B34C8D1DD83F55008F4648 /* UserCell */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		D2B34CA31DD8D483008F4648 /* RepositoriesList */ = {
+			isa = PBXGroup;
+			children = (
+				D2B34C721DD83545008F4648 /* FindRepositoryViewController.h */,
+				D2B34C731DD83545008F4648 /* FindRepositoryViewController.m */,
+				D2B34C8E1DD83F79008F4648 /* RepositoryCell */,
+			);
+			path = RepositoriesList;
 			sourceTree = "<group>";
 		};
 		D2F18C621DD82B2E00E39E29 = {

@@ -1,5 +1,5 @@
 //
-//  RepositoryTableViewCell.h
+//  UserTableViewCell.h
 //  challenge
 //
 //  Created by Patrícia Gabriele Neri on 13/11/16.
@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
-@interface RepositoryTableViewCell : UITableViewCell
+@interface UserTableViewCell : UITableViewCell
+
+- (void)setupWitUser:(User *)user;
+
 
 @end
