@@ -10,4 +10,13 @@
 
 @implementation Repository
 
+- (Repository *)initWithDictionary:(NSDictionary *)dic {
+    self = [super init];
+    if (self) {
+        _name = dic[@"name"];
+    }
+    return self;
+}
+
+
 @end

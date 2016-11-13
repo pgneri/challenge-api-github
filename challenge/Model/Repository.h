@@ -10,4 +10,11 @@
 
 @interface Repository : NSObject
 
+@property (nonatomic, strong) NSString *name;
+
+/*!
+ * init method for repository
+ */
+- (Repository *)initWithDictionary:(NSDictionary *)dic;
+
 @end

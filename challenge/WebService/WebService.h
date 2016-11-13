@@ -9,8 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @interface WebService : NSObject
+@property (nonatomic,copy) NSDictionary* dic;
 
+/*!
+ * Method to simple get User
+ */
 - (void)getUserWithUrl:(NSString *)url withCompletion:(void (^)(NSDictionary *JSONResponse))success andError:(void (^)(void))err;
+/*!
+ * Method to simple get Repository
+ */
 - (void)getRepositoryWithUrl:(NSString *)url withCompletion:(void (^)(NSDictionary *JSONResponse))success andError:(void (^)(void))err;
 
 @end

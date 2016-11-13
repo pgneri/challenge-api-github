@@ -9,5 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface ResponseUserList : NSObject
+@property (nonatomic, strong) NSMutableArray *aUsers;
+
+/*!
+ * Method to user list response 
+ */
+- (ResponseUserList *)initWithDictionary:(NSDictionary *)dic;
 
 @end

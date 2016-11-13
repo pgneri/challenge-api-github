@@ -7,7 +7,22 @@
 //
 
 #import "ResponseRepositoryList.h"
+#import "Repository.h"
 
 @implementation ResponseRepositoryList
+
+- (ResponseRepositoryList *)initWithDictionary:(NSDictionary *)dic {
+    self = [super init];
+    if (self) {
+        _aRepositories = [[NSMutableArray alloc] init];
+        
+        NSDictionary *results = dic[@"data"];
+        for (NSDictionary *dic in results[@"results"]) {
+            [_aRepositories addObject:[[Repository alloc] initWithDictionary:dic]];
+        }
+    }
+    return self;
+}
+
 
 @end

@@ -10,4 +10,12 @@
 
 @interface User : NSObject
 
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *avatar;
+
+/*!
+ * init method for user
+ */
+- (User *)initWithDictionary:(NSDictionary *)dic;
+
 @end

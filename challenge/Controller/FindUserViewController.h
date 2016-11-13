@@ -6,8 +6,9 @@
 //  Copyright © 2016 Patrícia Gabriele Neri. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "Webservice.h"
 
-@interface FindUserViewController : NSObject
+@interface FindUserViewController : UIViewController
 
 @end

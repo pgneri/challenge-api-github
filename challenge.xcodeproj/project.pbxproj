@@ -34,6 +34,10 @@
 		D2B34C8A1DD835E3008F4648 /* ResponseRepositoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B34C891DD835E3008F4648 /* ResponseRepositoryList.m */; };
 		D2B34C8B1DD835E3008F4648 /* ResponseRepositoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B34C891DD835E3008F4648 /* ResponseRepositoryList.m */; };
 		D2B34C8C1DD835E3008F4648 /* ResponseRepositoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B34C891DD835E3008F4648 /* ResponseRepositoryList.m */; };
+		D2B34C911DD83FC6008F4648 /* RepositoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B34C901DD83FC6008F4648 /* RepositoryTableViewCell.m */; };
+		D2B34C941DD84011008F4648 /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B34C931DD84011008F4648 /* UserTableViewCell.m */; };
+		D2B34C9C1DD840F7008F4648 /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2B34C9B1DD840F7008F4648 /* RepositoryTableViewCell.xib */; };
+		D2B34C9E1DD84104008F4648 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2B34C9D1DD84104008F4648 /* UserTableViewCell.xib */; };
 		D2F18C6F1DD82B2E00E39E29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F18C6E1DD82B2E00E39E29 /* AppDelegate.swift */; };
 		D2F18C711DD82B2E00E39E29 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F18C701DD82B2E00E39E29 /* MainViewController.swift */; };
 		D2F18C741DD82B2E00E39E29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F18C721DD82B2E00E39E29 /* Main.storyboard */; };
@@ -70,9 +74,9 @@
 		A35B7C62AFE292BAB3316708 /* libPods-challenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-challenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A368DE7A87D755F7A4663B9A /* libPods-challengeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-challengeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE3A024B16C00906FA2DB59 /* Pods-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-challengeUITests/Pods-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		D2B34C5F1DD832E3008F4648 /* challenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "challenge-Bridging-Header.h"; path = "Utils/challenge-Bridging-Header.h"; sourceTree = "<group>"; };
-		D2B34C601DD832E3008F4648 /* challengeTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "challengeTests-Bridging-Header.h"; path = "Utils/challengeTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		D2B34C611DD832E3008F4648 /* challengeUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "challengeUITests-Bridging-Header.h"; path = "Utils/challengeUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		D2B34C5F1DD832E3008F4648 /* challenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "challenge-Bridging-Header.h"; sourceTree = "<group>"; };
+		D2B34C601DD832E3008F4648 /* challengeTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "challengeTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		D2B34C611DD832E3008F4648 /* challengeUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "challengeUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		D2B34C621DD832E3008F4648 /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
 		D2B34C631DD832E3008F4648 /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
 		D2B34C671DD83391008F4648 /* WebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebService.h; sourceTree = "<group>"; };
@@ -90,6 +94,12 @@
 		D2B34C841DD835D4008F4648 /* ResponseUserList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseUserList.m; sourceTree = "<group>"; };
 		D2B34C881DD835E3008F4648 /* ResponseRepositoryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseRepositoryList.h; sourceTree = "<group>"; };
 		D2B34C891DD835E3008F4648 /* ResponseRepositoryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseRepositoryList.m; sourceTree = "<group>"; };
+		D2B34C8F1DD83FC6008F4648 /* RepositoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryTableViewCell.h; sourceTree = "<group>"; };
+		D2B34C901DD83FC6008F4648 /* RepositoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryTableViewCell.m; sourceTree = "<group>"; };
+		D2B34C921DD84011008F4648 /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
+		D2B34C931DD84011008F4648 /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
+		D2B34C9B1DD840F7008F4648 /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
+		D2B34C9D1DD84104008F4648 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		D2F18C6B1DD82B2E00E39E29 /* challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F18C6E1DD82B2E00E39E29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2F18C701DD82B2E00E39E29 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = challenge/Controller/MainViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -186,6 +196,8 @@
 		D2B34C5D1DD83018008F4648 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D2B34C8E1DD83F79008F4648 /* RepositoryCell */,
+				D2B34C8D1DD83F55008F4648 /* UserCell */,
 				D2B34C6C1DD83452008F4648 /* MainViewController-Swift.h */,
 				D2F18C701DD82B2E00E39E29 /* MainViewController.swift */,
 				D2B34C6D1DD8352F008F4648 /* FindUserViewController.h */,
@@ -205,6 +217,36 @@
 				D2B34C891DD835E3008F4648 /* ResponseRepositoryList.m */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		D2B34C8D1DD83F55008F4648 /* UserCell */ = {
+			isa = PBXGroup;
+			children = (
+				D2B34C921DD84011008F4648 /* UserTableViewCell.h */,
+				D2B34C931DD84011008F4648 /* UserTableViewCell.m */,
+				D2B34C9D1DD84104008F4648 /* UserTableViewCell.xib */,
+			);
+			path = UserCell;
+			sourceTree = "<group>";
+		};
+		D2B34C8E1DD83F79008F4648 /* RepositoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				D2B34C8F1DD83FC6008F4648 /* RepositoryTableViewCell.h */,
+				D2B34C901DD83FC6008F4648 /* RepositoryTableViewCell.m */,
+				D2B34C9B1DD840F7008F4648 /* RepositoryTableViewCell.xib */,
+			);
+			path = RepositoryCell;
+			sourceTree = "<group>";
+		};
+		D2B34CA11DD8427B008F4648 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D2B34C601DD832E3008F4648 /* challengeTests-Bridging-Header.h */,
+				D2B34C611DD832E3008F4648 /* challengeUITests-Bridging-Header.h */,
+				D2B34C5F1DD832E3008F4648 /* challenge-Bridging-Header.h */,
+			);
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 		D2F18C621DD82B2E00E39E29 = {
@@ -234,14 +276,12 @@
 			children = (
 				D2F18C6E1DD82B2E00E39E29 /* AppDelegate.swift */,
 				D2F18C7A1DD82B2E00E39E29 /* Info.plist */,
-				D2B34C5F1DD832E3008F4648 /* challenge-Bridging-Header.h */,
-				D2B34C601DD832E3008F4648 /* challengeTests-Bridging-Header.h */,
-				D2B34C611DD832E3008F4648 /* challengeUITests-Bridging-Header.h */,
 				D2B34C5D1DD83018008F4648 /* Controller */,
 				D2B34C5C1DD83008008F4648 /* Utils */,
 				D2B34C5B1DD82FF2008F4648 /* WebService */,
 				D2B34C5A1DD82FD7008F4648 /* Model */,
 				D2B34C591DD82FC8008F4648 /* View */,
+				D2B34CA11DD8427B008F4648 /* SupportFiles */,
 			);
 			path = challenge;
 			sourceTree = "<group>";
@@ -399,6 +439,8 @@
 				D2F18C791DD82B2E00E39E29 /* LaunchScreen.storyboard in Resources */,
 				D2F18C761DD82B2E00E39E29 /* Assets.xcassets in Resources */,
 				D2F18C741DD82B2E00E39E29 /* Main.storyboard in Resources */,
+				D2B34C9C1DD840F7008F4648 /* RepositoryTableViewCell.xib in Resources */,
+				D2B34C9E1DD84104008F4648 /* UserTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,7 +611,9 @@
 				D2F18C711DD82B2E00E39E29 /* MainViewController.swift in Sources */,
 				D2B34C691DD83391008F4648 /* WebService.m in Sources */,
 				D2B34C6F1DD8352F008F4648 /* FindUserViewController.m in Sources */,
+				D2B34C941DD84011008F4648 /* UserTableViewCell.m in Sources */,
 				D2F18C6F1DD82B2E00E39E29 /* AppDelegate.swift in Sources */,
+				D2B34C911DD83FC6008F4648 /* RepositoryTableViewCell.m in Sources */,
 				D2B34C7F1DD835BB008F4648 /* Repository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

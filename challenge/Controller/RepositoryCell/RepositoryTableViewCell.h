@@ -1,13 +1,13 @@
 //
-//  ViewController-Swift.h
+//  RepositoryTableViewCell.h
 //  challenge
 //
 //  Created by Patrícia Gabriele Neri on 13/11/16.
 //  Copyright © 2016 Patrícia Gabriele Neri. All rights reserved.
 //
 
-#ifndef MainViewController_Swift_h
-#define MainViewController_Swift_h
+#import <UIKit/UIKit.h>
 
+@interface RepositoryTableViewCell : UITableViewCell
 
-#endif /* MainViewController_Swift_h */
+@end

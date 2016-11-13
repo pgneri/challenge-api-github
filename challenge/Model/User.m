@@ -10,4 +10,14 @@
 
 @implementation User
 
+- (User *)initWithDictionary:(NSDictionary *)dic {
+    self = [super init];
+    if (self) {
+        _name = dic[@"name"];
+        _avatar = dic[@"avatar_url"];
+    }
+    return self;
+}
+
+
 @end
