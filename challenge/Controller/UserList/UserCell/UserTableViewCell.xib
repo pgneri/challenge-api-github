@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,7 +13,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K6y-vM-I6C" id="Nq4-yk-nCw">
-                <frame key="frameInset" width="375" height="65"/>
+                <frame key="frameInset" width="375" height="64"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8g-3W-Mja">
@@ -23,19 +24,19 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYf-s7-lqO">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wwj-ME-Eet" firstAttribute="top" secondItem="GYf-s7-lqO" secondAttribute="top" id="0Ry-GH-BdD"/>
-                            <constraint firstItem="GYf-s7-lqO" firstAttribute="top" secondItem="O8g-3W-Mja" secondAttribute="top" constant="4" id="K59-yu-MW8"/>
-                            <constraint firstItem="GYf-s7-lqO" firstAttribute="leading" secondItem="wwj-ME-Eet" secondAttribute="trailing" constant="8" symbolic="YES" id="OaG-a9-9JC"/>
+                            <constraint firstItem="GYf-s7-lqO" firstAttribute="leading" secondItem="wwj-ME-Eet" secondAttribute="trailing" constant="8" symbolic="YES" id="S2V-fH-PKu"/>
                             <constraint firstItem="wwj-ME-Eet" firstAttribute="leading" secondItem="O8g-3W-Mja" secondAttribute="leading" constant="8" id="VJo-W4-QDc"/>
                             <constraint firstAttribute="bottom" secondItem="wwj-ME-Eet" secondAttribute="bottom" constant="4" id="XdM-c9-Q25"/>
                             <constraint firstItem="wwj-ME-Eet" firstAttribute="top" secondItem="O8g-3W-Mja" secondAttribute="top" constant="4" id="aJi-9i-dZO"/>
+                            <constraint firstItem="GYf-s7-lqO" firstAttribute="trailing" secondItem="O8g-3W-Mja" secondAttribute="trailingMargin" id="ihW-fF-9dt"/>
+                            <constraint firstItem="GYf-s7-lqO" firstAttribute="top" secondItem="wwj-ME-Eet" secondAttribute="top" id="wad-8i-QJx"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -50,7 +51,7 @@
                 <outlet property="ImgAvatar" destination="wwj-ME-Eet" id="mwR-ZA-rY7"/>
                 <outlet property="lblName" destination="GYf-s7-lqO" id="Jpb-jc-RBG"/>
             </connections>
-            <point key="canvasLocation" x="-380" y="-71"/>
+            <point key="canvasLocation" x="-380.5" y="-71.5"/>
         </tableViewCell>
     </objects>
 </document>

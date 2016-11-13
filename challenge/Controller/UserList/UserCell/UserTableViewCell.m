@@ -32,6 +32,16 @@
 
 - (void)setupWitUser:(User *)user {
     _lblName.text = user.name;
+    NSURL *url = [NSURL URLWithString:user.avatar];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSData *dataImage = [NSData dataWithContentsOfURL:url];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // Update the UI
+            _ImgAvatar.image = [UIImage imageWithData:dataImage];
+        });
+    });
+    
     self.user = user;
 }
 
