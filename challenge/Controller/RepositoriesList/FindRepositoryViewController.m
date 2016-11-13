@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchRepository;
 
 @end
 
@@ -25,8 +26,12 @@
     [super viewDidLoad];
     
     self.dataSource = [[NSMutableArray alloc] init];
-    [self loadRepositoriesFromGitHub];
-    // Do any additional setup after loading the view.
+    
+     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,11 +39,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)loadRepositoriesFromGitHub {
-    NSString *url = [NSString stringWithFormat:@"https://api.github.com/search/repositories?q=swift"];
-    
-    // buscar lista de usuarios
-    [[[WebService alloc] init] getUserWithUrl:url withCompletion:^(NSDictionary *JSONResponse) {
+- (void)loadRepositoriesFromGitHub:(NSString *)name {
+
+    NSString *url = [NSString stringWithFormat:@"https://api.github.com/search/repositories?q=%@",name];
+    // buscar lista de repositorios
+    [[[WebService alloc] init] getGitHubInformationWithUrl:url withCompletion:^(NSDictionary *JSONResponse) {
         // parser para o JSON do response
         ResponseRepositoryList *response = [[ResponseRepositoryList alloc] initWithDictionary:JSONResponse];
 
@@ -49,10 +54,6 @@
 }
 
 - (void)didReceiveResponse:(ResponseRepositoryList *)response {
-
-    NSLog(@"%@", response);
-    NSLog(@"aaaaaaaa");
-    NSLog(@"%@",response.aRepositories);
     [_dataSource addObjectsFromArray:response.aRepositories];
     
     [_tableView reloadData];
@@ -97,6 +98,35 @@
     return cell;
 }
 
+#pragma mark - UISearchView Delegate and DataSource
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+    @try {
+       [self loadRepositoriesFromGitHub:searchBar.text];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@",exception);
+        [AlertView showAlertWithTitle:@"Error" andMessage:@"Error while retrieving information. Please, try again."];
+    }
+    @finally {
+
+    }
+}
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [self dismissKeyboard];
+    searchBar.text = nil;
+    [self.navigationItem setRightBarButtonItem:nil animated:YES];
+}
+
+
+- (void) dismissKeyboard
+{
+    [self.searchRepository resignFirstResponder];
+}
 
 /*
 #pragma mark - Navigation

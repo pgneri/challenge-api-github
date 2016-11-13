@@ -8,6 +8,7 @@
 
 #import "ResponseRepositoryList.h"
 #import "Repository.h"
+#import "AlertView.h"
 
 @implementation ResponseRepositoryList
 
@@ -17,8 +18,12 @@
         _aRepositories = [[NSMutableArray alloc] init];
         
         NSDictionary *results = dic[@"items"];
-        for (NSDictionary *dic in results) {
-            [_aRepositories addObject:[[Repository alloc] initWithDictionary:dic]];
+        if(results.count>0){
+            for (NSDictionary *dic in results) {
+                [_aRepositories addObject:[[Repository alloc] initWithDictionary:dic]];
+            }
+        } else {
+            [AlertView showAlertWithMessage:@"No information found."];
         }
     }
     return self;

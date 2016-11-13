@@ -12,9 +12,10 @@
 @interface AlertView : NSObject
 
 /*!
- * Method to show alertView
+ * Methods to show alertView
  */
 + (void)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message;
++ (void)showAlertWithMessage:(NSString *)message;
 
 
 @end

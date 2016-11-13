@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Webservice.h"
 
-@interface FindUserViewController : UIViewController
+@interface FindUserViewController : UIViewController {
+      NSURL* nextURL;
+      int currentPage;
+}
 
 @end

@@ -76,6 +76,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I8a-Oq-IsI"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hb3-bs-6f1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,8 +94,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="map-pt-F0D">
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="map-pt-F0D">
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                                 <connections>
                                     <outlet property="delegate" destination="bEf-AB-zHN" id="rYI-N9-es4"/>
                                 </connections>
@@ -119,6 +124,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchRepository" destination="map-pt-F0D" id="ALp-X4-cb4"/>
                         <outlet property="tableView" destination="Nyy-3R-qIk" id="CQg-kG-ibn"/>
                     </connections>
                 </viewController>
@@ -138,7 +144,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="nQU-Fy-fxB">
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nQU-Fy-fxB">
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="wcj-yy-X1Y" id="wKM-3H-Ez5"/>
@@ -164,6 +170,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchUser" destination="nQU-Fy-fxB" id="uDN-UC-I6Y"/>
                         <outlet property="tableView" destination="lTD-aF-XkP" id="6VB-hm-T9k"/>
                     </connections>
                 </viewController>

@@ -15,18 +15,24 @@
 
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchUser;
 
 @end
 
 @implementation FindUserViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
+    currentPage = 1;
     self.dataSource = [[NSMutableArray alloc] init];
 
-    [self loadUserFromGitHub];
-    // Do any additional setup after loading the view.
+     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+
+    [self.view addGestureRecognizer:tap];
+    [self loadUsersFromGitHub:_searchUser.text];
+    [super viewDidLoad];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,18 +40,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)loadUserFromGitHub {
-    NSString *url = [NSString stringWithFormat:@"https://api.github.com/search/users?q=patricia"];
-    
-    // buscar lista de usuarios
-    [[[WebService alloc] init] getUserWithUrl:url withCompletion:^(NSDictionary *JSONResponse) {
-        // parser para o JSON do response
-        ResponseUserList *response = [[ResponseUserList alloc] initWithDictionary:JSONResponse];
-
-        [self didReceiveResponse:response];
-    } andError:^{
-        [AlertView showAlertWithTitle:@"Error" andMessage:@"Error while retrieving information. Please, try again."];
-    }];
+- (void)loadUsersFromGitHub:(NSString *)name {
+    if(name!=nil && ![name isEqual:@""]){
+        NSString *url = [NSString stringWithFormat:@"https://api.github.com/search/users?q=%@&page=%d",name,currentPage];
+        
+        // buscar lista de usuarios
+        [[[WebService alloc] init] getGitHubInformationWithUrl:url withCompletion:^(NSDictionary *JSONResponse) {
+            // parser para o JSON do response
+            ResponseUserList *response = [[ResponseUserList alloc] initWithDictionary:JSONResponse];
+            
+            currentPage ++;
+            [self didReceiveResponse:response];
+        } andError:^{
+            [AlertView showAlertWithTitle:@"Error" andMessage:@"Error while retrieving information. Please, try again."];
+        }];
+    }
 }
 
 - (void)didReceiveResponse:(ResponseUserList *)response {
@@ -58,6 +67,7 @@
     [_tableView reloadData];
 
 }
+
 
 #pragma mark - UITableView Delegate && DataSource
 
@@ -73,6 +83,11 @@
     
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+    
+    if (indexPath.row == _dataSource.count -1) {
+        currentPage += 1;
+        [self loadUsersFromGitHub:_searchUser.text];
     }
 }
 
@@ -96,6 +111,38 @@
     
     return cell;
 }
+
+#pragma mark - UISearchView Delegate and DataSource
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+    @try {
+       currentPage = 1;
+       [self loadUsersFromGitHub:searchBar.text];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@",exception);
+        [AlertView showAlertWithTitle:@"Error" andMessage:@"Error while retrieving information. Please, try again."];
+    }
+    @finally {
+
+    }
+}
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [self dismissKeyboard];
+    searchBar.text = nil;
+    [self.navigationItem setRightBarButtonItem:nil animated:YES];
+}
+
+
+- (void) dismissKeyboard
+{
+    [self.searchUser resignFirstResponder];
+}
+
 
 /*
 #pragma mark - Navigation

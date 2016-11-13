@@ -8,6 +8,8 @@
 
 #import "ResponseUserList.h"
 #import "User.h"
+#import "AlertView.h"
+#import "FindUserViewController.h"
 
 @implementation ResponseUserList
 
@@ -17,8 +19,13 @@
         _aUsers = [[NSMutableArray alloc] init];
         
         NSDictionary *results = dic[@"items"];
-        for (NSDictionary *dic in results) {
-            [_aUsers addObject:[[User alloc] initWithDictionary:dic]];
+        if(results.count>0){
+            for (NSDictionary *dic in results) {
+                [_aUsers addObject:[[User alloc] initWithDictionary:dic]];
+            }
+        } else {
+            [AlertView showAlertWithMessage:@"No information found."];
+            [_aUsers addObject:[[User alloc] initWithDictionary:nil]];
         }
     }
     return self;
