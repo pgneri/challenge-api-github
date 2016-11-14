@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSDictionary *owner;
 @property (nonatomic, strong) NSString *ownerLogin;
 @property (nonatomic, strong) NSString *ownerAvatar;
+@property (nonatomic, strong) NSString *stargazers;
 
 /*!
  * init method for repository

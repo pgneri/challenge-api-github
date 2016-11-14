@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -10,6 +11,7 @@
         <scene sceneID="0mH-pP-Gxw">
             <objects>
                 <navigationController id="1eq-3b-504" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="C2u-mz-amj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -20,7 +22,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8WJ-RE-2sy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-294" y="39"/>
+            <point key="canvasLocation" x="-650" y="36"/>
         </scene>
         <!--API GitHub -->
         <scene sceneID="qkL-XC-vpB">
@@ -35,48 +37,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyJ-rK-yUb">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHZ-8g-wtF">
+                                        <color key="backgroundColor" red="0.1058823529" green="0.39607843139999999" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="Find Users">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" red="0.1058823529" green="0.39607843139999999" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="wcj-yy-X1Y" kind="show" id="eBa-vt-fCn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysm-sP-zCj">
+                                        <color key="backgroundColor" red="0.1058823529" green="0.39607843139999999" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="Find Repositories">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="bEf-AB-zHN" kind="show" id="icW-rn-RdY"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octobiwan" highlightedImage="octobiwan" translatesAutoresizingMaskIntoConstraints="NO" id="5Xr-6m-5zT">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Nmw-Ci-oIh"/>
+                                            <constraint firstAttribute="height" constant="200" id="ZHE-R6-WqT"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="5zV-LT-0oT"/>
-                                    <constraint firstAttribute="height" constant="163" id="gPk-Sx-2nE"/>
+                                    <constraint firstItem="Ysm-sP-zCj" firstAttribute="trailing" secondItem="vHZ-8g-wtF" secondAttribute="trailing" id="5e1-qg-ldO"/>
+                                    <constraint firstItem="Ysm-sP-zCj" firstAttribute="leading" secondItem="vHZ-8g-wtF" secondAttribute="leading" id="8c9-Ax-x5Y"/>
+                                    <constraint firstItem="Ysm-sP-zCj" firstAttribute="top" secondItem="vHZ-8g-wtF" secondAttribute="bottom" constant="28" id="Nbb-1A-8B5"/>
+                                    <constraint firstItem="Ysm-sP-zCj" firstAttribute="trailing" secondItem="dyJ-rK-yUb" secondAttribute="trailingMargin" id="V3K-pn-Kng"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ysm-sP-zCj" secondAttribute="bottom" constant="20" id="cOi-yS-8wd"/>
+                                    <constraint firstItem="Ysm-sP-zCj" firstAttribute="centerX" secondItem="5Xr-6m-5zT" secondAttribute="centerX" id="pcb-mO-WKG"/>
+                                    <constraint firstItem="vHZ-8g-wtF" firstAttribute="top" secondItem="5Xr-6m-5zT" secondAttribute="bottom" constant="50" id="rkN-cZ-zxV"/>
+                                    <constraint firstItem="Ysm-sP-zCj" firstAttribute="leading" secondItem="dyJ-rK-yUb" secondAttribute="leadingMargin" id="ytX-HS-PFU"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHZ-8g-wtF">
-                                <color key="backgroundColor" red="0.1058823529" green="0.39607843139999999" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Find Users">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" red="0.1058823529" green="0.39607843139999999" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="wcj-yy-X1Y" kind="show" id="eBa-vt-fCn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysm-sP-zCj">
-                                <color key="backgroundColor" red="0.1058823529" green="0.39607843139999999" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Find Repositories">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="bEf-AB-zHN" kind="show" id="icW-rn-RdY"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ysm-sP-zCj" firstAttribute="trailing" secondItem="vHZ-8g-wtF" secondAttribute="trailing" id="6SO-H1-VSn"/>
-                            <constraint firstItem="Ysm-sP-zCj" firstAttribute="leading" secondItem="dyJ-rK-yUb" secondAttribute="leading" id="Ie0-EG-wDm"/>
-                            <constraint firstItem="Ysm-sP-zCj" firstAttribute="top" secondItem="vHZ-8g-wtF" secondAttribute="bottom" constant="55" id="KsT-DV-9i0"/>
-                            <constraint firstItem="Ysm-sP-zCj" firstAttribute="trailing" secondItem="dyJ-rK-yUb" secondAttribute="trailing" id="NBG-vt-PdT"/>
-                            <constraint firstItem="Ysm-sP-zCj" firstAttribute="top" secondItem="dyJ-rK-yUb" secondAttribute="bottom" constant="-45" id="gAf-xS-hpc"/>
-                            <constraint firstItem="dyJ-rK-yUb" firstAttribute="centerY" secondItem="a8P-53-Sn6" secondAttribute="centerY" id="iuC-Ut-JKe"/>
-                            <constraint firstItem="Ysm-sP-zCj" firstAttribute="leading" secondItem="vHZ-8g-wtF" secondAttribute="leading" id="qBd-2H-dch"/>
-                            <constraint firstItem="dyJ-rK-yUb" firstAttribute="centerX" secondItem="a8P-53-Sn6" secondAttribute="centerX" id="wgA-zg-Gn0"/>
+                            <constraint firstItem="dyJ-rK-yUb" firstAttribute="leading" secondItem="a8P-53-Sn6" secondAttribute="leadingMargin" constant="29" id="bAK-Dh-oxk"/>
+                            <constraint firstItem="dyJ-rK-yUb" firstAttribute="centerY" secondItem="a8P-53-Sn6" secondAttribute="centerY" id="f3R-Su-T6Z"/>
+                            <constraint firstItem="dyJ-rK-yUb" firstAttribute="top" secondItem="Vlz-Pc-Xbc" secondAttribute="bottom" constant="55" id="ptj-Ci-5tX"/>
+                            <constraint firstItem="dyJ-rK-yUb" firstAttribute="centerX" secondItem="a8P-53-Sn6" secondAttribute="centerX" id="vul-vF-IDP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I8a-Oq-IsI"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="btFindRepository" destination="Ysm-sP-zCj" id="hhs-TJ-Toc"/>
+                        <outlet property="btFindUser" destination="vHZ-8g-wtF" id="6Rw-U3-5SO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hb3-bs-6f1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -112,7 +128,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.39607843139999999" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="map-pt-F0D" firstAttribute="leading" secondItem="Nyy-3R-qIk" secondAttribute="leading" id="E9e-de-t5Z"/>
                             <constraint firstItem="map-pt-F0D" firstAttribute="leading" secondItem="CKP-As-B0m" secondAttribute="leading" id="XlJ-YQ-QHP"/>
@@ -123,6 +139,7 @@
                             <constraint firstItem="Nyy-3R-qIk" firstAttribute="bottom" secondItem="PcZ-sR-Ob8" secondAttribute="top" id="yw8-nb-JO1"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="searchRepository" destination="map-pt-F0D" id="ALp-X4-cb4"/>
                         <outlet property="tableView" destination="Nyy-3R-qIk" id="CQg-kG-ibn"/>
@@ -158,7 +175,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.39607843139999999" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="nQU-Fy-fxB" firstAttribute="leading" secondItem="lTD-aF-XkP" secondAttribute="leading" id="0fa-es-uLf"/>
                             <constraint firstItem="nQU-Fy-fxB" firstAttribute="bottom" secondItem="lTD-aF-XkP" secondAttribute="top" id="7Hi-ze-tWL"/>
@@ -169,6 +186,7 @@
                             <constraint firstItem="nQU-Fy-fxB" firstAttribute="top" secondItem="HVr-x5-prL" secondAttribute="bottom" id="pFm-in-qD2"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="searchUser" destination="nQU-Fy-fxB" id="uDN-UC-I6Y"/>
                         <outlet property="tableView" destination="lTD-aF-XkP" id="6VB-hm-T9k"/>
@@ -179,4 +197,7 @@
             <point key="canvasLocation" x="1238" y="-292"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="octobiwan" width="896" height="896"/>
+    </resources>
 </document>

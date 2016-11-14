@@ -11,6 +11,8 @@
 @interface RepositoryTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblDescription;
+@property (weak, nonatomic) IBOutlet UILabel *lblLanguage;
 
 @property Repository* repository;
 
@@ -30,7 +32,25 @@
 }
 
 - (void)setupWitRepository:(Repository *)repository {
+    
     _lblTitle.text = repository.name;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            @try {
+               _lblLanguage.text = repository.language;
+            }
+            @catch (NSException *exception) {
+               _lblLanguage.text = @"";
+            }
+            @try {
+               _lblDescription.text = repository.descriptionRepo;
+            }
+            @catch (NSException *exception) {
+               _lblDescription.text = @"";
+            }
+        });
+    });
     self.repository = repository;
 }
 

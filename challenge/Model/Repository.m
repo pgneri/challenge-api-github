@@ -19,6 +19,7 @@
         _descriptionRepo = dic[@"description"];
         _fork = dic[@"fork"];
         _forks = dic[@"forks"];
+        _stargazers = dic[@"stargazers_count"];
         _owner = dic[@"owner"];
         _ownerLogin = _owner[@"login"];
         _ownerAvatar = _owner[@"avatar_url"];

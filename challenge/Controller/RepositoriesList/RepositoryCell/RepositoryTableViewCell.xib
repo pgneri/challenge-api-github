@@ -9,11 +9,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="LVz-2N-IQO" customClass="RepositoryTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="LVz-2N-IQO" customClass="RepositoryTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LVz-2N-IQO" id="wla-Wo-rqA">
-                <frame key="frameInset" width="375" height="65"/>
+                <frame key="frameInset" width="375" height="88"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QuE-hM-Gh8">
@@ -22,7 +22,23 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="182" id="qFc-og-318"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.1058823529" green="0.39607843139999999" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFa-Q3-aNw">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="G5J-dU-1L3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="headTruncation" numberOfLines="3" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxW-Jg-lVw">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="gGg-TQ-u8B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -30,7 +46,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eq0-b5-mBs" firstAttribute="leading" secondItem="QuE-hM-Gh8" secondAttribute="leadingMargin" id="3oq-oP-XPl"/>
+                            <constraint firstAttribute="bottom" secondItem="hxW-Jg-lVw" secondAttribute="bottom" constant="27" id="F1w-Li-scA"/>
+                            <constraint firstItem="hxW-Jg-lVw" firstAttribute="leading" secondItem="eq0-b5-mBs" secondAttribute="leading" id="J7u-uD-b6b"/>
+                            <constraint firstItem="DFa-Q3-aNw" firstAttribute="leading" secondItem="hxW-Jg-lVw" secondAttribute="leading" id="Klc-kV-tSf"/>
                             <constraint firstItem="eq0-b5-mBs" firstAttribute="top" secondItem="QuE-hM-Gh8" secondAttribute="topMargin" id="WQ2-7T-FkW"/>
+                            <constraint firstItem="hxW-Jg-lVw" firstAttribute="trailing" secondItem="QuE-hM-Gh8" secondAttribute="trailingMargin" id="i0P-UL-6Xe"/>
+                            <constraint firstItem="DFa-Q3-aNw" firstAttribute="top" secondItem="QuE-hM-Gh8" secondAttribute="top" constant="67" id="iBP-Cp-nyc"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -42,9 +63,11 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="lblDescription" destination="hxW-Jg-lVw" id="KRL-82-lBG"/>
+                <outlet property="lblLanguage" destination="DFa-Q3-aNw" id="Kww-r4-OLA"/>
                 <outlet property="lblTitle" destination="eq0-b5-mBs" id="bhm-jv-CfR"/>
             </connections>
-            <point key="canvasLocation" x="9.5" y="22.5"/>
+            <point key="canvasLocation" x="9.5" y="34"/>
         </tableViewCell>
     </objects>
 </document>
