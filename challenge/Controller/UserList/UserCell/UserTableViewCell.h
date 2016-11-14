@@ -10,7 +10,9 @@
 #import "User.h"
 
 @interface UserTableViewCell : UITableViewCell
-
+/*!
+ * init method for user tableCell
+ */
 - (void)setupWitUser:(User *)user;
 
 

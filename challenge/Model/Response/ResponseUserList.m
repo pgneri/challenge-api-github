@@ -24,8 +24,7 @@
                 [_aUsers addObject:[[User alloc] initWithDictionary:dic]];
             }
         } else {
-            [AlertView showAlertWithMessage:@"No information found."];
-            [_aUsers addObject:[[User alloc] initWithDictionary:nil]];
+            [AlertView showAlertWithMessage:@"Information not found."];
         }
     }
     return self;

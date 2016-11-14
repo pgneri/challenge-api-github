@@ -10,7 +10,9 @@
 #import "Repository.h"
 
 @interface RepositoryTableViewCell : UITableViewCell
-
+/*!
+ * init method for repository tableCell
+ */
 - (void)setupWitRepository:(Repository *)repository;
 
 @end

@@ -30,7 +30,7 @@
                                    action:@selector(dismissKeyboard)];
 
     [self.view addGestureRecognizer:tap];
-    [self loadUsersFromGitHub:_searchUser.text];
+//    [self loadUsersFromGitHub:_searchUser.text];
     [super viewDidLoad];
 
 }
@@ -58,14 +58,8 @@
 }
 
 - (void)didReceiveResponse:(ResponseUserList *)response {
-
-    NSLog(@"%@", response);
-    NSLog(@"aaaaaaaa");
-    NSLog(@"%@",response.aUsers);
     [_dataSource addObjectsFromArray:response.aUsers];
-
     [_tableView reloadData];
-
 }
 
 
@@ -84,8 +78,7 @@
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:UIEdgeInsetsZero];
     }
-    
-    if (indexPath.row == _dataSource.count -1) {
+    if (indexPath.row == _dataSource.count -1 && _dataSource.count>=30) {
         currentPage += 1;
         [self loadUsersFromGitHub:_searchUser.text];
     }
@@ -120,6 +113,8 @@
     @try {
        currentPage = 1;
        [self loadUsersFromGitHub:searchBar.text];
+        self.dataSource = [[NSMutableArray alloc] init];
+       [_tableView reloadData];
     }
     @catch (NSException *exception) {
         NSLog(@"%@",exception);

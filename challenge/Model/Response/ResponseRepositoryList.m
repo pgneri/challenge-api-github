@@ -23,7 +23,7 @@
                 [_aRepositories addObject:[[Repository alloc] initWithDictionary:dic]];
             }
         } else {
-            [AlertView showAlertWithMessage:@"No information found."];
+            [AlertView showAlertWithMessage:@"Information not found."];
         }
     }
     return self;

@@ -41,7 +41,6 @@
             _ImgAvatar.image = [UIImage imageWithData:dataImage];
         });
     });
-    
     self.user = user;
 }
 

@@ -23,7 +23,6 @@
         _ownerLogin = _owner[@"login"];
         _ownerAvatar = _owner[@"avatar_url"];
     }
-    NSLog(@"%@",_name);
     return self;
 }
 

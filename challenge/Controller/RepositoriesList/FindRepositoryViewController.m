@@ -55,9 +55,7 @@
 
 - (void)didReceiveResponse:(ResponseRepositoryList *)response {
     [_dataSource addObjectsFromArray:response.aRepositories];
-    
     [_tableView reloadData];
-
 }
 
 #pragma mark - UITableView Delegate && DataSource
@@ -74,6 +72,10 @@
     
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+    if (indexPath.row == _dataSource.count -1 && _dataSource.count>=30) {
+        currentPage += 1;
+        [self loadRepositoriesFromGitHub:_searchRepository.text];
     }
 }
 
@@ -104,7 +106,10 @@
 {
     [searchBar resignFirstResponder];
     @try {
+        currentPage = 1;
        [self loadRepositoriesFromGitHub:searchBar.text];
+        self.dataSource = [[NSMutableArray alloc] init];
+       [_tableView reloadData];
     }
     @catch (NSException *exception) {
         NSLog(@"%@",exception);

@@ -28,8 +28,8 @@
         
         NSError *error = nil;
         if (!error) {
-            NSLog(@"JSON: %@", responseObject);
             NSLog(@"Chamada efetuada com sucesso");
+            NSLog(@"%@",responseObject);
             success(responseObject);
         } else {
             err();
